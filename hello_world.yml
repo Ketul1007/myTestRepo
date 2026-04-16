@@ -1,0 +1,8 @@
+---
+- name: Server Info Test
+  hosts: all
+  gather_facts: yes  # This must be 'yes' to collect info
+  tasks:
+    - name: Display OS and IP Address
+      debug:
+        msg: "This server is running {{ ansible_distribution }} and its IP is {{ ansible_default_ipv4.address }}"
